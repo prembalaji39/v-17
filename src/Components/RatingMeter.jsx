@@ -1,10 +1,10 @@
 import React from "react";
 import FusionCharts from "fusioncharts";
-import charts from "fusioncharts/fusioncharts.charts";
-import ReactFusioncharts from "react-fusioncharts";
+import Widgets from 'fusioncharts/fusioncharts.widgets';
+import ReactFC from 'react-fusioncharts';
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 
-// Resolves charts dependancy
-charts(FusionCharts);
+ReactFC.fcRoot(FusionCharts, Widgets, FusionTheme);
 
 const dataSource = {
   chart: {
@@ -49,7 +49,7 @@ class RatingMeter extends React.Component {
     return (
       <>
         <h1>Rating Meter</h1>
-        <ReactFusioncharts
+        <ReactFC
           type="angulargauge"
           width="600"
           height="400"

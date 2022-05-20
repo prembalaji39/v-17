@@ -1,10 +1,10 @@
-import FusionCharts from "fusioncharts";
-import charts from "fusioncharts/fusioncharts.charts";
 import React from "react";
-import ReactFusioncharts from "react-fusioncharts";
+import FusionCharts from "fusioncharts";
+import TreeMap from "fusioncharts/fusioncharts.treemap";
+import ReactFC from "react-fusioncharts";
+import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 
-// Resolves charts dependancy
-charts(FusionCharts);
+ReactFC.fcRoot(FusionCharts, TreeMap, FusionTheme);
 
 const dataSource = {
   data: [
@@ -1328,7 +1328,7 @@ class SimpleTreeMap extends React.Component {
     return (
       <>
         <h1>Simple TreeMap</h1>
-        <ReactFusioncharts
+        <ReactFC
           type="treemap"
           width="600"
           height="400"

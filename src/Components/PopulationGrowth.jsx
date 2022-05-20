@@ -1,10 +1,12 @@
 import React from "react";
-import FusionCharts from "fusioncharts";
-import charts from "fusioncharts/fusioncharts.charts";
-import ReactFusioncharts from "react-fusioncharts";
 
-// Resolves charts dependancy
-charts(FusionCharts);
+import FusionCharts from "fusioncharts";
+import Maps from "fusioncharts/fusioncharts.maps";
+import World from "fusioncharts/maps/fusioncharts.world";
+import ReactFC from "react-fusioncharts";
+import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+
+ReactFC.fcRoot(FusionCharts, Maps, World, FusionTheme);
 
 const dataSource = {
   chart: {
@@ -486,7 +488,7 @@ function PopulationGrowth(props) {
   return (
     <>
       <h1>Annual Population Growth</h1>
-      <ReactFusioncharts
+      <ReactFC
         type="maps/world"
         width="600"
         height="400"

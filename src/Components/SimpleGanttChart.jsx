@@ -1,9 +1,10 @@
 import React from "react";
+import Gantt from "fusioncharts/fusioncharts.gantt";
+import ReactFC from "react-fusioncharts";
+import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 import FusionCharts from "fusioncharts";
-import charts from "fusioncharts/fusioncharts.charts";
-import ReactFusioncharts from "react-fusioncharts";
 
-charts(FusionCharts);
+ReactFC.fcRoot(FusionCharts, Gantt, FusionTheme);
 
 const dataSource = {
   chart: {
@@ -196,7 +197,7 @@ function SimpleGanttChart(props) {
   return (
     <>
       <h1>Simple Gantt Chart</h1>
-      <ReactFusioncharts
+      <ReactFC
         type="gantt"
         width="600"
         height="400"

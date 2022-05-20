@@ -1,10 +1,10 @@
 import React from "react";
 import FusionCharts from "fusioncharts";
-import charts from "fusioncharts/fusioncharts.charts";
-import ReactFusioncharts from "react-fusioncharts";
+import PowerCharts from "fusioncharts/fusioncharts.powercharts";
+import ReactFC from "react-fusioncharts";
+import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 
-// Resolves charts dependancy
-charts(FusionCharts);
+ReactFC.fcRoot(FusionCharts, PowerCharts, FusionTheme);
 
 const dataSource = {
   chart: {
@@ -72,7 +72,7 @@ function SimpleRadar(props) {
   return (
     <>
       <h1>Simple Radar Chart</h1>
-      <ReactFusioncharts
+      <ReactFC
         type="radar"
         width="600"
         height="400"
